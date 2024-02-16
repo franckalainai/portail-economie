@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home One || Paroti || Non Profit Charity HTML Template</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'assets/images/favicons/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'assets/images/favicons/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="{% static 'image/png' %}"
+      sizes="16x16"
+      href="{% static 'assets/images/favicons/favicon-16x16.png' %}"
+    />
+    <link
+      rel="manifest"
+      href="{% static 'assets/images/favicons/site.webmanifest' %}"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- plugins css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/tiny-slider/dist/tiny-slider.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/animate/animate.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/paroti-icons/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendors/youtube-popup/youtube-popup.css' %}"
+    />
+    <!-- template css -->
+    <link rel="stylesheet" href="{% static 'assets/css/paroti.css' %}" />
+  </head>
+
+  <body>
+    {% block content %} {% endblock content %}
+    <!-- plugins js -->
+    <script src="{% static 'assets/vendors/jquery/jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/dist/min/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/youtube-popup/youtube-popup.jquery.js' %}"></script>
+    <!-- template js -->
+    <script src="{% static 'assets/js/paroti.js' %}"></script>
+  </body>
+</html>
