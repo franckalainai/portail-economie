@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portail',
+    'ckeditor',
+    'ckeditor_uploader',
+    'taggit',
 ]
+
+TAGGIT_CASE_INSENSITIVE = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,10 +80,20 @@ WSGI_APPLICATION = 'portail_economie.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portail_economie',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
@@ -122,6 +137,10 @@ STATICFILES_DIRS=[
     (os.path.join(BASE_DIR,'static'))
     ]
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media/"
+#ckeditor upload path
+CKEDITOR_UPLOAD_PATH="uploads/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

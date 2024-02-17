@@ -1,0 +1,220 @@
+{% extends 'base.html' %} {% block title %} - {{post.title}}{% endblock title %}
+{% block content %}
+
+<div class="page-wrapper">
+  {% include 'include/navbar.html' %}
+  <section
+    class="page-header"
+    style="background-image: url(assets/images/backgrounds/page-header-1-1.jpg)"
+  >
+    <div class="container">
+      <ul class="list-unstyled breadcrumb-one">
+        <li><a href="index.html">Home</a></li>
+        <li><span>Blog</span></li>
+      </ul>
+      <!-- /.list-unstyled breadcrumb-one -->
+      <h2 class="page-header__title">Blog post</h2>
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.page-header -->
+  <section class="sec-pad-top sec-pad-bottom blog-details">
+    <div class="container">
+      <div class="row gutter-y-60">
+        <div class="col-lg-8">
+          <div class="blog-details__content clearfix">
+            <div class="blog-details__image">
+              <img src="assets/images/blog/blog-d-1-1.jpg" alt="" />
+              <div class="blog-card__date"><span>28</span>Oct</div>
+              <!-- /.blog-card__date -->
+            </div>
+            <!-- /.blog-details__image -->
+            <ul class="blog-card__meta list-unstyled">
+              <li>
+                <i class="fa fa-user"></i>
+                <a href="#">by Admin</a>
+              </li>
+              <li>
+                <i class="fa fa-comments"></i>
+                <a href="#">02 comments</a>
+              </li>
+            </ul>
+            <!-- /.blog-card__meta -->
+            <h3 class="blog-card__title">{{post.title}}</h3>
+            <!-- /.blog-card__title -->
+            <p>{{post.body|linebreaks}}</p>
+          </div>
+          <!-- /.blog-details__content -->
+          <div class="blog-details__bottom">
+            <p class="blog-details__tags">
+              <span>Tags</span>
+              <a href="#">Donation</a>
+              <a href="#">Charity</a>
+            </p>
+            <div class="blog-details__social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <!-- /.blog-details__bottom -->
+          <div class="blog-details__author clearfix">
+            <img src="assets/images/blog/blog-a-1.jpg" alt="" />
+            <h3 class="blog-details__author__name">Kevin martin</h3>
+            <!-- /.blog-details__name -->
+            <p class="blog-details__author__bio">
+              Cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs
+              condmentum lightly believable. If you are going to use a of you
+              need to be sure there isn't anything embarrassing.
+            </p>
+          </div>
+          <!-- /.blog-details__author -->
+          <div class="blog-details__comments">
+            <h3 class="blog-details__sec__title">02 Comments</h3>
+            <!-- /.blog-details__sec__title -->
+            <ul class="list-unstyled blog-details__comments__list">
+              <li>
+                <img src="assets/images/blog/blog-c-1.jpg" alt="" />
+                <div class="blog-details__comments__meta">
+                  <h3 class="blog-details__comments__name">Christine Eve</h3>
+                  <!-- /.blog-details__comments__name -->
+                  <p class="blog-details__comments__date">20 Aug, 2022</p>
+                  <!-- /.blog-details__comments__date -->
+                </div>
+                <!-- /.blog-details__comments__meta -->
+                <p class="blog-details__comments__text">
+                  Sending love. My nephews Nick and Anthony Salaber are your
+                  teammates, so I know the caliber person you are. Our whole
+                  family is sending our best to you and your family.
+                </p>
+                <!-- /.blog-details__comments__text -->
+                <a href="#" class="thm-btn blog-details__comments__btn"
+                  ><span>Reply</span></a
+                >
+              </li>
+              <li>
+                <img src="assets/images/blog/blog-c-2.jpg" alt="" />
+                <div class="blog-details__comments__meta">
+                  <h3 class="blog-details__comments__name">Christine Eve</h3>
+                  <!-- /.blog-details__comments__name -->
+                  <p class="blog-details__comments__date">20 Aug, 2022</p>
+                  <!-- /.blog-details__comments__date -->
+                </div>
+                <!-- /.blog-details__comments__meta -->
+                <p class="blog-details__comments__text">
+                  Sending love. My nephews Nick and Anthony Salaber are your
+                  teammates, so I know the caliber person you are. Our whole
+                  family is sending our best to you and your family.
+                </p>
+                <!-- /.blog-details__comments__text -->
+                <a href="#" class="thm-btn blog-details__comments__btn"
+                  ><span>Reply</span></a
+                >
+              </li>
+            </ul>
+            <!-- /.blog-details__comments__list -->
+          </div>
+          <!-- /.blog-details__comments -->
+          <div class="blog-details__form">
+            <h3 class="blog-details__sec__title">Leave a comment</h3>
+            <!-- /.blog-details__sec__title -->
+            <form
+              action="assets/inc/sendemail.php"
+              class="contact-one__form contact-form-validated"
+            >
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your name" name="name" />
+                </div>
+                <!-- /.col-md-6 -->
+                <div class="col-md-6">
+                  <input type="text" placeholder="Email address" name="email" />
+                </div>
+                <!-- /.col-md-6 -->
+                <div class="col-md-12">
+                  <textarea
+                    name="message"
+                    placeholder="Write a message"
+                  ></textarea>
+                </div>
+                <!-- /.col-md-12 -->
+                <div class="col-md-12">
+                  <button type="submit" class="thm-btn contact-one__btn">
+                    <span>Submit comment</span>
+                  </button>
+                </div>
+                <!-- /.col-md-12 -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <div class="result"></div>
+            <!-- /.result -->
+          </div>
+          <!-- /.blog-details__form -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar__single sidebar__single--search">
+              <form action="#">
+                <input type="text" placeholder="Search here.." />
+                <button type="submit">
+                  <i class="paroti-icon-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+            <!-- /.sidebar__single -->
+            <!-- /.sidebar__single -->
+            <div class="sidebar__single sidebar__single--lists">
+              {% for tag in post.tags.all %}
+              <h3 class="sidebar__title">{{tag.name}}</h3>
+              {% endfor %}
+              <!-- /.sidebar__title -->
+              <ul class="list-unstyled sidebar__lists">
+                {% for post in similar_posts %}
+                <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                {% empty %} {% endfor %}
+              </ul>
+            </div>
+            <!-- /.sidebar__single -->
+            <div class="sidebar__single sidebar__single--tags">
+              <h3 class="sidebar__title">Tags</h3>
+              <!-- /.sidebar__title -->
+              <p class="sidebar__tags">
+                <a href="#">Donation</a>
+                <a href="#">Fundraising</a>
+                <a href="#">Education</a>
+                <a href="#">Charity</a>
+                <a href="#">Life</a>
+              </p>
+            </div>
+            <!-- /.sidebar__single -->
+          </div>
+          <!-- /.sidebar -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.sec-pad-top sec-pad-bottom -->
+
+  {% include 'include/footer.html' %}
+</div>
+<!-- /.page-wrapper -->
+
+<!-- /.
+mobile-nav__wrapper 
+-->
+
+<!-- /.
+search-popup 
+-->
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"
+  ><i class="fa fa-angle-up"></i
+></a>
+
+{% endblock content %}
