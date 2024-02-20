@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'taggit',
+    'tinymce',
 ]
+
+INSTALLED_APPS += ('django_summernote',)
 
 TAGGIT_CASE_INSENSITIVE = True
 
@@ -89,9 +92,9 @@ WSGI_APPLICATION = 'portail_economie.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portail_economie',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'c2259596c_economie',
+        'USER': 'c2259596c_economie',
+        'PASSWORD': 'manager$2024',
         'HOST':'localhost',
         'PORT':'3306',
     }
@@ -134,8 +137,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    (os.path.join(BASE_DIR,'static'))
+    #(os.path.join(BASE_DIR,'static'))
+    'portail_economie/static'
     ]
+
+STATIC_ROOT = BASE_DIR / STATIC_URL
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
@@ -143,5 +149,33 @@ MEDIA_ROOT = BASE_DIR / "media/"
 CKEDITOR_UPLOAD_PATH="uploads/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+}
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

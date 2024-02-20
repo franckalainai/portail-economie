@@ -2,9 +2,11 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Actualite, Post
+from django_summernote.admin import SummernoteModelAdmin
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+#@admin.register(Post)
+#class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'image', 'author', 'publish', 'status')
     list_filter = ('status', 'created', 'publish', 'author')
     search_fields = ('title', 'body')
@@ -12,6 +14,9 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ('author',)
     date_hierarchy = 'publish'
     ordering = ('status', 'publish')
+    summernote_fields = ('body',)
+
+admin.site.register(Post, PostAdmin)
 
 @admin.register(Actualite)
 class ActualiteAdmin(admin.ModelAdmin):

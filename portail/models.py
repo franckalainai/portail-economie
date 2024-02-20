@@ -3,9 +3,11 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-from ckeditor_uploader.fields import RichTextUploadingField #import this
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField 
 from taggit.managers import TaggableManager
-
+from tinymce.models import HTMLField  
+from django_summernote.fields import SummernoteTextFormField, SummernoteTextField
 
 
 # creating model manager
@@ -22,11 +24,14 @@ class Post(models.Model):
     )
 
     title = models.CharField(max_length=250)
+    resume = models.CharField(max_length=500)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
     #body = models.TextField()
     image = models.ImageField(upload_to='featured_image/%Y/%m/%d/', blank=True, null=True) #this
-    body=RichTextUploadingField() # add this
+    #body=RichTextUploadingField() # add this
+    #body=RichTextField()
+    body = SummernoteTextFormField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -47,7 +52,22 @@ class Post(models.Model):
     
     tags = TaggableManager() 
 
+class Publication(models.Model):
+    STATUS_CHOICES = (
+    ('draft', 'Draft'),
+    ('published', 'Published'),
+    )
 
+    title = models.CharField(max_length=250)
+    resume = models.CharField(max_length=500)
+    pdf = models.ImageField(upload_to ='media/', blank=True, null=True) #this
+    publish = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ('-publish',)
+    
+    def __str__(self):
+        return self.title
 
 class Actualite(models.Model):
     STATUS_CHOICES = (
